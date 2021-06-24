@@ -3,13 +3,13 @@ Windows 10 Shield
 
 <img src="githubsc347shield.png" style="width:90%;height:auto;"/>
 
-#Requirements
+# Requirements
 
-    Download and install <a href="https://python.org">Python</a>
+Download and install <a href="https://python.org">Python</a>
 
-    Don't Forget to check "Add Python to Path" On installation
+Don't Forget to check "Add Python to Path" On installation
 
-#Usage if file is in Desktop
+# Usage if file is in Desktop
 
     1) open terminal as adminstrator and type
     
