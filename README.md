@@ -3,6 +3,15 @@ Windows 10 Shield
 
 <img src="githubsc347shield.png" style="width:90%;height:auto;"/>
 
+#Requirements
+    Download and install <a href="https://python.org">Python</a>
+    Don't Forget to check "Add Python to Path" On installation
+
+#Usage if file is in Desktop
+    1) open terminal as adminstrator and type
+    2) cd c:/users/yourname/Desktop
+    3) python sc347shield.py
+    
 # License
 MIT License
 
