@@ -3,6 +3,16 @@ Windows 10 Shield
 
 <img src="githubsc347shield.png" style="width:90%;height:auto;"/>
 
+# Description
+
+An open source and very powerful shield for Windows 10, written in Python3.
+
+Offers strong security!
+
+It basically blocks every application and every communication and gives you 
+
+the opportunity to choose which application you will allow access to.
+
 # Requirements
 
 Download and install <a href="https://python.org">Python</a>
