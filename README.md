@@ -11,7 +11,7 @@ Don't Forget to check "Add Python to Path" On installation
 
 # Usage if file is in Desktop
 
-    1) open terminal as adminstrator and type
+    1) open terminal as administrator and type
     
     2) cd c:/users/yourname/Desktop
     
