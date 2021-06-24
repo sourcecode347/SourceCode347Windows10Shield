@@ -43,7 +43,7 @@ Don't Forget to check "Add Python to Path" On installation
 
 * The Reset option resets all firewall settings
 
-* The Setup option resets all firewal settings and block any connection and app
+* The Setup option resets all firewal settings and blocks every application and every communication
 
     
 # License
