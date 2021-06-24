@@ -1,6 +1,7 @@
 # SourceCode347Windows10Shield
 Windows 10 Shield
 
+<img src="githubsc347shield.png" style="width:90%;height:auto;"/>
 
 # License
 MIT License
