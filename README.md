@@ -13,7 +13,7 @@ Don't Forget to check "Add Python to Path" On installation
 
     1) open terminal as administrator and type
     
-    2) cd c:/users/yourname/Desktop
+    2) cd c:/Users/YourName/Desktop
     
     3) python sc347shield.py
     
