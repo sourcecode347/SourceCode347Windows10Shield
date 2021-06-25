@@ -31,15 +31,19 @@ Don't Forget to check "Add Python to Path" On installation
 
     4) type 3 and press enter
 
-    5) type chrome and press enter
+    5) type chrome_out and press enter
 
     6) type the full path of chrome C:\Program Files\Google\Chrome\Application\chrome.exe and press enter
 
+    7) type 1 for outcoming traffic and press enter
+
+* if you want to download and upload files you need incoming and outgoing traffic
+
 # Delete Rule
 
-    7) type 4 and press enter
+    8) type 4 and press enter
 
-    8) type the name of Active App and press enter
+    9) type the name of Active App and press enter
 
 * The Reset option resets all firewall settings
 
