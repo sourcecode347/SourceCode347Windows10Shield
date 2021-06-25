@@ -65,6 +65,9 @@ def setup():
 	global AllowedApps
 	AllowedApps = []
 def appAllow(name,path):
+	global status
+	if status=="Unsecure":
+		setup()
 	try:
 		proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=in program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 		stdout_value = proc.stdout.read() + proc.stderr.read()
@@ -81,7 +84,6 @@ def appAllow(name,path):
 		pass
 	if "Ok" in output3 and "Ok" in output4:
 		AllowedApps.append(name)
-		global status
 		if len(AllowedApps) == 1:
 			status = " Allowed 1 App"
 		else:
@@ -134,7 +136,7 @@ while True:
 			counter+=1
 			print(("#"*3)+(" "*3)+str(counter)+") "+x)
 		print("#"*80)
-	a1 = str(input(" For Setup Enter  : 1 \n For Reset Enter  : 2 \n For Allow Rule   : 3 \n For Delete Rule  : 4 \n View MIT License : 5 \n Source Code 347>"))
+	a1 = str(input(" For Setup Enter  : 1 \n For Reset Enter  : 2 \n For Allow Rule	  : 3 \n For Delete Rule  : 4 \n View MIT License : 5 \n Source Code 347>"))
 	if a1 == "1":
 		setup()
 	if a1 == "2":
