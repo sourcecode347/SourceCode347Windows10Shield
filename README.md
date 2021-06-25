@@ -35,7 +35,7 @@ Don't Forget to check "Add Python to Path" On installation
 
     6) type the full path of chrome C:\Program Files\Google\Chrome\Application\chrome.exe and press enter
 
-    7) type 1 for outcoming traffic and press enter
+    7) type 1 for outgoing traffic and press enter
 
 * if you want to download and upload files you need incoming and outgoing traffic
 
