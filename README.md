@@ -53,7 +53,14 @@ Don't Forget to check "Add Python to Path" On installation
 
 * The Setup option resets all firewall settings and blocks every application and every communication
 
-    
+# Official Website
+
+<a href="https://sourcecode347.com">SourceCode347.com</a>
+
+# Youtube Channel
+
+<a href="https://youtube.com/sourcecode347">SourcCode347 Youtube Channel</a>
+
 # License
 MIT License
 
