@@ -15,7 +15,7 @@ the opportunity to choose which application you will allow access to.
 
 # Requirements
 
-Download and install <a href="https://python.org">Python</a>
+Download and install <a href="https://python.org">Python3.*</a>
 
 Don't Forget to check "Add Python to Path" On installation
 
