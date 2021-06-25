@@ -5,7 +5,7 @@ Windows 10 Shield
 
 <br>
 
-<img src="githubsc347shield_out.png" style="width:90%;height:auto;"/>
+<img src="sc347shield_out.png" style="width:90%;height:auto;"/>
 
 # Description
 
