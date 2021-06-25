@@ -1,4 +1,4 @@
-# SourceCode347 Windows 10S hield
+# SourceCode347 Windows 10 Shield
 Windows 10 Shield
 
 <img src="githubsc347shield.png" style="width:90%;height:auto;"/>
