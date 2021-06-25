@@ -3,6 +3,10 @@ Windows 10 Shield
 
 <img src="githubsc347shield.png" style="width:90%;height:auto;"/>
 
+<br>
+
+<img src="githubsc347shield_out.png" style="width:90%;height:auto;"/>
+
 # Description
 
 An open source and very powerful shield for Windows 10, written in Python3.
@@ -37,7 +41,7 @@ Don't Forget to check "Add Python to Path" On installation
 
     7) type 1 for outgoing traffic and press enter
 
-* if you want to download and upload files you need incoming and outgoing traffic
+* if you want to download files you need incoming and outgoing traffic
 
 # Delete Rule
 
