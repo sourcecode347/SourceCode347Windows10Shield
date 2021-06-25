@@ -64,25 +64,29 @@ def setup():
 	status = "Secure"
 	global AllowedApps
 	AllowedApps = []
-def appAllow(name,path):
+def appAllow(name,path,con):
 	global status
 	if status=="Unsecure":
 		setup()
-	try:
-		proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=in program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-		stdout_value = proc.stdout.read() + proc.stderr.read()
-		output3 = stdout_value.decode("utf-8","ignore")
-		print(output3)
-	except:
-		pass
-	try:
-		proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=out program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-		stdout_value = proc.stdout.read() + proc.stderr.read()
-		output4 = stdout_value.decode("utf-8","ignore")
-		print(output4)
-	except:
-		pass
-	if "Ok" in output3 and "Ok" in output4:
+	output3=""
+	output4=""
+	if "in" in con:
+		try:
+			proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=in program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+			stdout_value = proc.stdout.read() + proc.stderr.read()
+			output3 = stdout_value.decode("utf-8","ignore")
+			print(output3)
+		except:
+			pass
+	if "out" in con:
+		try:
+			proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=out program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+			stdout_value = proc.stdout.read() + proc.stderr.read()
+			output4 = stdout_value.decode("utf-8","ignore")
+			print(output4)
+		except:
+			pass
+	if "Ok" in output3 or "Ok" in output4:
 		AllowedApps.append(name)
 		if len(AllowedApps) == 1:
 			status = " Allowed 1 App"
@@ -90,6 +94,8 @@ def appAllow(name,path):
 			status = " Allowed "+str(len(AllowedApps))+" Apps"
 
 def deleteRule(name):
+	output3=""
+	output4=""
 	try:
 		proc = subprocess.Popen("netsh advfirewall firewall delete rule name="+name+" dir=in", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 		stdout_value = proc.stdout.read() + proc.stderr.read()
@@ -105,7 +111,7 @@ def deleteRule(name):
 	except:
 		pass
 	
-	if "Ok" in output3 and "Ok" in output4:
+	if "Ok" in output3 or "Ok" in output4:
 		AllowedApps.remove(name)
 		global status
 		if len(AllowedApps) == 1:
@@ -142,9 +148,16 @@ while True:
 	if a1 == "2":
 		reset()
 	if a1 == "3":
-		a2 = str(input("  Enter App Name : "))
-		a3 = str(input("  Enter App Path : "))
-		appAllow(a2,a3)
+		a2 = str(input("     Enter App Name : "))
+		a3 = str(input("     Enter App Path : "))
+		a4 = str(input("  Out:1 In:2 both:3 : "))
+		if a4=="1":
+			con="out"
+		elif a4=="2":
+			con="in"
+		else:
+			con="in-out"
+		appAllow(a2,a3,con)
 	if a1 == "4":
 		a2 = str(input("  Enter App Name : "))
 		deleteRule(a2)
