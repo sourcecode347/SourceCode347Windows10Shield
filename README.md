@@ -2,6 +2,7 @@
 Windows 10 Shield
 
 <img src="githubsc347shield.png" style="width:90%;height:auto;"/>
+<head>
 
 <meta property="og:image" content="https://raw.githubusercontent.com/sourcecode347/SourceCode347Windows10Shield/main/githubsc347shield.png"/>
 
@@ -13,6 +14,7 @@ Windows 10 Shield
 
 <meta property="og:image:height" content="512"/>
 
+</head>
 
 # Description
 
