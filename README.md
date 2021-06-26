@@ -1,11 +1,11 @@
 # SourceCode347 Windows 10 Shield
 Windows 10 Shield
 
-<img src="githubsc347shield.png" style="width:90%;height:auto;"/>
+<img src="sc347shieldU2.png" style="width:90%;height:auto;"/>
 
 <br>
 
-<img src="sc347shield_out.png" style="width:90%;height:auto;"/>
+<img src="sc347shieldU.png" style="width:90%;height:auto;"/>
 
 # Description
 
@@ -49,9 +49,27 @@ Don't Forget to check "Add Python to Path" On installation
 
     9) type the name of Active App and press enter
 
+# Allow Port
+
+    10 ) type 5 and press enter
+
+    11 ) type the name of Port ex. port22 and press enter
+    
+    12 ) type the Port ex. 22 and press enter
+    
+    13 ) type the Protocol ex. TCP and press enter
+
+    14 ) type 1,2 or 3 for incoming, outgoing or 2way traffic
+
 * The Reset option resets all firewall settings
 
 * The Setup option resets all firewall settings and blocks every application and every communication
+
+* You can execute commands as Administrator to see the network statistics and connected ip adresses or domains
+   
+        netstat -o -b
+    
+        netstat -o -f 
 
 # Official Website
 
