@@ -31,6 +31,7 @@ Youtube Channel: https://youtube.com/sourcecode347
 
 import os,subprocess,sys,random	 
 license = '''
+
   ___                        ___        _       _____ _ ____          
  / __|___ _  _ _ _ __ ___   / __|___ __| |___  |__ | | |__  |         
  \__ / _ | || | '_/ _/ -_) | (__/ _ / _` / -_)  |_ |_  _|/ /          
@@ -38,7 +39,8 @@ license = '''
  \ \    / (_)_ _  __| |_____ __ _____ / |/  \  / __| |_ (_)___| |__| |
   \ \/\/ /| | ' \/ _` / _ \ V  V (_-< | | () | \__ | ' \| / -_| / _` |
    \_/\_/ |_|_||_\__,_\___/\_/\_//__/ |_|\__/  |___|_||_|_\___|_\__,_|
-                                                                     
+                                                                      
+
 '''
 
 global AllowedApps , status
@@ -89,9 +91,38 @@ def appAllow(name,path,con):
 	if "Ok" in output3 or "Ok" in output4:
 		AllowedApps.append(name)
 		if len(AllowedApps) == 1:
-			status = " Allowed 1 App"
+			status = " Allowed 1 App or Port"
 		else:
-			status = " Allowed "+str(len(AllowedApps))+" Apps"
+			status = " Allowed "+str(len(AllowedApps))+" Apps & Ports"
+			
+def portAllow(name , port , proto , con):
+	global status
+	if status=="Unsecure":
+		setup()
+	output3=""
+	output4=""
+	if "in" in con:
+		try:
+			proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=in protocol="+proto+" localport="+port+" action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+			stdout_value = proc.stdout.read() + proc.stderr.read()
+			output3 = stdout_value.decode("utf-8","ignore")
+			print(output3)
+		except:
+			pass
+	if "out" in con:
+		try:
+			proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=out protocol="+proto+" localport="+port+" action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+			stdout_value = proc.stdout.read() + proc.stderr.read()
+			output4 = stdout_value.decode("utf-8","ignore")
+			print(output4)
+		except:
+			pass
+	if "Ok" in output3 or "Ok" in output4:
+		AllowedApps.append(name)
+		if len(AllowedApps) == 1:
+			status = " Allowed 1 App or Port"
+		else:
+			status = " Allowed "+str(len(AllowedApps))+" Apps & Ports"
 
 def deleteRule(name):
 	output3=""
@@ -115,15 +146,23 @@ def deleteRule(name):
 		AllowedApps.remove(name)
 		global status
 		if len(AllowedApps) == 1:
-			status = " Allowed 1 App"
+			status = " Allowed 1 App or Port"
 		elif len(AllowedApps) == 0:
 			setup()
 		else:
-			status = " Allowed "+str(len(AllowedApps))+" Apps"
-			
+			status = " Allowed "+str(len(AllowedApps))+" Apps & Ports"
+def executeCMD(cmd):
+	try:
+		proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+		stdout_value = proc.stdout.read() + proc.stderr.read()
+		output3 = stdout_value.decode("utf-8","ignore")
+		print(output3)
+	except:
+		pass			
 	
 setup()
 mlbool = False
+cmd = False
 while True:
 	os.system("cls")
 	if mlbool == False:
@@ -131,23 +170,26 @@ while True:
 	if mlbool == True:
 		print(MITLicense)
 		mlbool = False
+	if cmd != False:
+		executeCMD(cmd)
+		cmd = False
 	print("#"*80)
 	print(("#"*3)+(" "*3)+"Status : "+status)
 	print("#"*80)
 	if len(AllowedApps) > 0:
-		print(("#"*3)+(" "*3)+"Active Apps")
+		print(("#"*3)+(" "*3)+"Active Apps & Ports")
 		print("#"*80)
 		counter=0
 		for x in AllowedApps:
 			counter+=1
 			print(("#"*3)+(" "*3)+str(counter)+") "+x)
 		print("#"*80)
-	a1 = str(input(" For Setup Enter  : 1 \n For Reset Enter  : 2 \n For Allow Rule	  : 3 \n For Delete Rule  : 4 \n View MIT License : 5 \n Source Code 347>"))
+	a1 = str(input(" For Setup Enter  : 1 \n For Reset Enter  : 2 \n For Allow App	  : 3 \n For Delete Rule  : 4 \n For Allow Port	  : 5 \n View MIT License : 6 \n Source Code 347>"))
 	if a1 == "1":
 		setup()
-	if a1 == "2":
+	elif a1 == "2":
 		reset()
-	if a1 == "3":
+	elif a1 == "3":
 		a2 = str(input("     Enter App Name : "))
 		a3 = str(input("     Enter App Path : "))
 		a4 = str(input("  Out:1 In:2 both:3 : "))
@@ -158,8 +200,22 @@ while True:
 		else:
 			con="in-out"
 		appAllow(a2,a3,con)
-	if a1 == "4":
+	elif a1 == "4":
 		a2 = str(input("  Enter App Name : "))
 		deleteRule(a2)
-	if a1 == "5":
+	elif a1 == "5":
+		a2 = str(input("     Enter Port Name : "))
+		a3 = str(input("     Enter LocalPort : "))
+		a5 = str(input("Protocol TCP/UDP/ANY : "))
+		a4 = str(input("   Out:1 In:2 both:3 : "))
+		if a4=="1":
+			con="out"
+		elif a4=="2":
+			con="in"
+		else:
+			con="in-out"
+		portAllow(a2,a3,a5,con)
+	elif a1 == "6":
 		mlbool = True
+	else:
+		cmd = a1
