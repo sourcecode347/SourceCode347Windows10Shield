@@ -69,7 +69,7 @@ Don't Forget to check "Add Python to Path" On installation
 
     15 ) type 9 and press Enter
 
-    16 ) Choose Export Settings and type a filename , the settings saved at <code>C:/</code> Directory.
+    16 ) Choose Export Settings and type a filename , the settings saved at C:\ Directory.
 
 * The Reset option resets all firewall settings
 
