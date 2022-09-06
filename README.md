@@ -29,7 +29,11 @@ Don't Forget to check "Add Python to Path" On installation
     
     2) cd c:/Users/YourName/Desktop
     
-    3) python sc347shield.py
+    3) python Shield.py
+    
+    4) Don't Forget to Save Your Default Firewall Settings (Read Below How to do this)
+
+    5) After Step 4 You Can Run a Setup and Allowing Apps & Ports
 
 # Add Rule
 
@@ -47,7 +51,7 @@ Don't Forget to check "Add Python to Path" On installation
 
     8) type 4 and press enter
 
-    9) type the name of Active App and press enter
+    9) type the id of Active App and press enter
 
 # Allow Port
 
@@ -61,15 +65,19 @@ Don't Forget to check "Add Python to Path" On installation
 
     14 ) type 1,2 or 3 for incoming, outgoing or 2way traffic
 
+# Firewal Settings
+
+    15 ) type 9 and press Enter
+
+    16 ) Choose Export Settings and type a filename , the settings saved at <code>C:/</code> Directory.
+
 * The Reset option resets all firewall settings
 
 * The Setup option resets all firewall settings and blocks every application and every communication
 
 * You can execute commands as Administrator to see the network statistics and connected ip adresses or domains
    
-        netstat -o -b
-    
-        netstat -o -f 
+        netstat -ano | findstr ESTA
 
 # Official Website
 
