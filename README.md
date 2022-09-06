@@ -1,11 +1,11 @@
 # SourceCode347 Windows 10 Shield
 Windows 10 Shield
 
-<img src="sc347Shield.png" style="width:90%;height:auto;"/>
+<img src="SC347Shield.png" style="width:90%;height:auto;"/>
 
 <br>
 
-<img src="sc347Shield2.png" style="width:90%;height:auto;"/>
+<img src="SC347Shield2.png" style="width:90%;height:auto;"/>
 
 # Description
 
