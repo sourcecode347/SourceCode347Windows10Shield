@@ -23,7 +23,7 @@ Download and install <a href="https://python.org">Python3.*</a>
 
 Don't Forget to check "Add Python to Path" On installation
 
-<h1 style='font-size:24px;color:#00FFFF;'>Don't Forget to Save Your Firewall Settings Before Run <b>Reset or Setup(!)</h1>
+<h1 style='font-size:24px;'>Don't Forget to Save Your Firewall Settings Before Run <b>Reset or Setup(!)</h1>
 
 # Usage if file is in Desktop
 
