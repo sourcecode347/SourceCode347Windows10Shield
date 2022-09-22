@@ -23,6 +23,8 @@ Download and install <a href="https://python.org">Python3.*</a>
 
 Don't Forget to check "Add Python to Path" On installation
 
+<h1 style='font-size:24px;color:red;'>Don't Forget to Save Your Firewall Settings Before Run <b>Reset or Setup(!)</h1>
+
 # Usage if file is in Desktop
 
     1) open terminal as administrator and type
@@ -51,7 +53,7 @@ Don't Forget to check "Add Python to Path" On installation
 
     8) type 4 and press enter
 
-    9) type the id of Active App and press enter
+    9) type the name of Active rule and press enter
 
 # Allow Port
 
@@ -65,11 +67,21 @@ Don't Forget to check "Add Python to Path" On installation
 
     14 ) type 1,2 or 3 for incoming, outgoing or 2way traffic
 
+# Block IP
+
+    15 ) type 6 and press enter
+
+    16 ) type the IP as name and press enter
+
+    17 ) type the IP without protocols as IP
+
+    18 ) type 1,2 or 3 for incoming, outgoing or 2way traffic
+
 # Firewal Settings
 
-    15 ) type 9 and press Enter
+    19 ) type 10 and press Enter
 
-    16 ) Choose Export Settings and type a filename , the settings saved at C:\ Directory.
+    20 ) Choose Export Settings and type a filename , the settings saved at C:\ Directory.
 
 * The Reset option resets all firewall settings
 
