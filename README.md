@@ -83,6 +83,8 @@ Don't Forget to check "Add Python to Path" On installation
 
     20 ) Choose Export Settings and type a filename , the settings saved at C:\ Directory.
 
+    21 ) The filename of saved setting needs the .wfw extension ( example fwSetttings.wfw )
+
 * The Reset option resets all firewall settings
 
 * The Setup option resets all firewall settings and blocks every application and every communication
