@@ -185,7 +185,7 @@ def reset():
     except:
         pass
     try:
-        truncateAllowedApps(sql_connection())
+        truncateblockedIP(sql_connection())
     except:
         pass
     try:
@@ -222,7 +222,7 @@ def appAllow(name,path,con):
     output4=""
     if "in" in con:
         try:
-            proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=in program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+            proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=in program=\""+str(path)+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
             stdout_value = proc.stdout.read() + proc.stderr.read()
             output3 = stdout_value.decode("utf-8","ignore")
             print(output3)
@@ -230,7 +230,7 @@ def appAllow(name,path,con):
             pass
     if "out" in con:
         try:
-            proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=out program=\""+path+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+            proc = subprocess.Popen("netsh advfirewall firewall add rule name="+name+" dir=out program=\""+str(path)+"\" profile=any action=allow", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
             stdout_value = proc.stdout.read() + proc.stderr.read()
             output4 = stdout_value.decode("utf-8","ignore")
             print(output4)
@@ -371,6 +371,14 @@ def executeCMD(cmd):
     except:
         pass
         
+def netstat():
+    if 1==1:
+        proc = subprocess.Popen(['netstat -ano | findstr ESTA'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        stdout_value = proc.stdout.read() + proc.stderr.read()
+        output3 = stdout_value.decode("utf-8","ignore")
+        print(output3)
+    '''except:
+        pass'''
 ######################################################################################
 #### Virus Scanner
 ######################################################################################
@@ -553,6 +561,7 @@ while True:
     \n Kill All         : 9 \
     \n Firewall         : 10 \
     \n Virus Scanner    : 11 \
+    \n Netstat CMD      : 12 \
     \n "+("#"*80)+"\n Source Code 347>"))
     if a1 == "1":
         setup()
@@ -619,5 +628,7 @@ while True:
         a2 = str(input("    Enter Your Choice : "))
         if a2=="1":
             vtext=sql_fetchVirus_Unscanned(sql_connection())
+    elif a1 == "12":
+        netstat()
     else:
         cmd = a1
